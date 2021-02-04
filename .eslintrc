@@ -1,13 +1,12 @@
 {
-  "extends": ["airbnb", "airbnb/hooks"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "env": {
     "browser": true
   },
   "rules": {
-    "semi": [
-      1,
-      "never"
-    ],
+    "prettier/prettier": ["error"],
+    "semi": [1, "never"],
     "import/prefer-default-export": "off"
   },
   "settings": {

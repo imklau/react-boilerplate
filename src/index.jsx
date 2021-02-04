@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { ThemeProvider } from 'emotion-theming'
-import { Global } from '@emotion/core'
+import React from "react"
+import ReactDOM from "react-dom"
+import { ThemeProvider } from "emotion-theming"
+import { Global } from "@emotion/core"
 
-import { theme, globalStyles } from '@theme'
-import Button from '@components/button'
-import image from '@assets/images/image.jpg'
+import { theme, globalStyles } from "@theme"
+import Button from "@components/button"
+import image from "@assets/images/image.jpg"
 
 const App = () => (
   <ThemeProvider theme={theme}>
@@ -16,4 +16,4 @@ const App = () => (
   </ThemeProvider>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"))
