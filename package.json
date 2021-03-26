@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
-  "homepage": "https://noeemi.github.io/react-boilerplate/",
-  "version": "1.0.0",
+  "description": "Basic React Boilerplate",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "Klau",
   "license": "MIT",
