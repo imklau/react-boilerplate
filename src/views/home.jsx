@@ -1,5 +1,3 @@
-import React from "react"
-
 import Button from "@components/button"
 import image from "@assets/images/image.jpg"
 

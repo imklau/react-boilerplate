@@ -1,5 +1,3 @@
-import React from "react"
-
 import ArrowNext from "@assets/icons/arrow-next.svg"
 
 import * as Styled from "./button.styled"
