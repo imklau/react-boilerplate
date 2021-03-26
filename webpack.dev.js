@@ -12,6 +12,7 @@ module.exports = {
   devServer: {
     contentBase: "./build",
     port: 9000,
+    historyApiFallback: true,
   },
   stats: "minimal",
   plugins: [
@@ -25,6 +26,7 @@ module.exports = {
     alias: {
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@components": path.resolve(__dirname, "./src/components"),
+      "@views": path.resolve(__dirname, "./src/views"),
       "@theme": path.resolve(__dirname, "./src/theme"),
     },
     extensions: [".js", ".jsx"],
