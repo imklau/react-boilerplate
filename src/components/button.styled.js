@@ -3,12 +3,12 @@ import styled from "@emotion/styled"
 export const Button = styled.button`
   display: block;
   padding: 10px 25px;
-  background-color: #232323;
+  background-color: ${({ theme }) => theme.colors.dark};
   border: none;
   border-radius: 4px;
-  color: #fff;
-`
+  color: ${({ theme }) => theme.colors.white};
 
-export const Icon = styled.img`
-  margin-left: 10px;
+  svg {
+    margin-left: 10px;
+  }
 `
