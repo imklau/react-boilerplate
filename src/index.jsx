@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import { ThemeProvider } from "emotion-theming"
-import { Global } from "@emotion/core"
+import { Global, ThemeProvider } from "@emotion/react"
 
 import Home from "@views/home"
 import About from "@views/about"
