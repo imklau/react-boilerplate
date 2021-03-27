@@ -19,10 +19,9 @@
     "format": "prettier --write . --ignore-path .gitignore"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "clean-webpack-plugin": "^3.0.0",
-    "emotion-theming": "^10.0.27",
     "fs-extra": "^9.1.0",
     "html-webpack-plugin": "^5.0.0-alpha.7",
     "react": "^17.0.1",

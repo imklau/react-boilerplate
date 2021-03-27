@@ -1,4 +1,4 @@
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 
 import FiraSansRegular from "@assets/fonts/FiraSans-Regular.woff"
 import FiraSansRegular2 from "@assets/fonts/FiraSans-Regular.woff2"
