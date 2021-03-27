@@ -7,7 +7,7 @@ module.exports = {
   entry: "./src/index.jsx",
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "./../public"),
   },
   devtool: "source-map",
   plugins: [
@@ -19,10 +19,10 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      "@assets": path.resolve(__dirname, "./src/assets"),
-      "@components": path.resolve(__dirname, "./src/components"),
-      "@views": path.resolve(__dirname, "./src/views"),
-      "@theme": path.resolve(__dirname, "./src/theme"),
+      "@assets": path.resolve(__dirname, "./../src/assets"),
+      "@components": path.resolve(__dirname, "./../src/components"),
+      "@views": path.resolve(__dirname, "./../src/views"),
+      "@theme": path.resolve(__dirname, "./../src/theme"),
     },
     extensions: [".js", ".jsx"],
   },

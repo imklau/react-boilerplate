@@ -10,8 +10,8 @@
     "react-boilerplate": "bin/start.js"
   },
   "scripts": {
-    "start": "webpack serve -c ./webpack.dev.js",
-    "build": "webpack -c ./webpack.prod.js",
+    "start": "webpack serve -c ./webpack/webpack.dev.js",
+    "build": "webpack -c ./webpack/webpack.prod.js",
     "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint ./ --ext=js,jsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
