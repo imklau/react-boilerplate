@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 const fs = require("fs-extra")
 const path = require("path")
+const https = require("https")
 const { exec } = require("child_process")
 const editJsonFile = require("edit-json-file")
 
@@ -57,6 +58,28 @@ if (!projectName) {
           fs.createWriteStream(`${projectName}/${filesToCopy[i]}`)
         )
       }
+
+      // npm will remove the .gitignore file when the package is installed, therefore it cannot be copied, locally and needs to be downloaded. Use your raw .gitignore once you pushed your code to GitHub.
+      https.get(
+        "https://raw.githubusercontent.com/Noeemi/react-boilerplate/master/.gitignore",
+        (res) => {
+          res.setEncoding("utf8")
+          let body = ""
+          res.on("data", (data) => {
+            body += data
+          })
+          res.on("end", () => {
+            fs.writeFile(
+              `${process.argv[2]}/.gitignore`,
+              body,
+              { encoding: "utf-8" },
+              (err) => {
+                if (err) throw err
+              }
+            )
+          })
+        }
+      )
 
       // installing dependencies
       console.log("Installing dependencies -- it might take a few minutes...")
