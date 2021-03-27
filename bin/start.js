@@ -48,7 +48,6 @@ if (!projectName) {
         "webpack.prod.js",
         ".babelrc",
         ".eslintrc",
-        ".gitignore",
         ".prettierrc",
         ".stylelintrc",
       ]
