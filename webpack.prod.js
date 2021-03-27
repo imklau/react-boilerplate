@@ -7,7 +7,7 @@ module.exports = {
   entry: "./src/index.jsx",
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "public"),
   },
   devtool: "source-map",
   plugins: [

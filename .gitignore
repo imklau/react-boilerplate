@@ -9,6 +9,6 @@
 yarn-debug.log*
 yarn-error.log*
 
-# Build files #
-/build
+# Public files #
+/public
 

@@ -12,7 +12,7 @@
   "scripts": {
     "start": "webpack serve -c ./webpack.dev.js",
     "build": "webpack -c ./webpack.prod.js",
-    "build:serve": "yarn build && serve ./build",
+    "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint ./ --ext=js,jsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "lint:css": "stylelint src/**/*.js",
