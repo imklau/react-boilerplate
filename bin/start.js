@@ -44,8 +44,6 @@ if (!projectName) {
       packageJson.save()
 
       const filesToCopy = [
-        "webpack.dev.js",
-        "webpack.prod.js",
         ".babelrc",
         ".eslintrc",
         ".prettierrc",
@@ -97,6 +95,7 @@ if (!projectName) {
 
           console.log()
           console.log("Copying additional files...")
+          fs.copy(path.join(__dirname, "../webpack"), `${projectName}/webpack`)
           // copy the src files
           fs.copy(path.join(__dirname, "../src"), `${projectName}/src`)
             .then(() =>
