@@ -1,13 +1,13 @@
 {
-  "name": "react-boilerplate",
+  "name": "@imklau/react-boilerplate",
   "description": "Basic React Boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "index.js",
   "author": "Klau",
   "license": "MIT",
-  "private": "true",
+  "repository": "git@github.com:Noeemi/react-boilerplate.git",
   "bin": {
-    "rb-start": "./bin/start.js"
+    "start": "./bin/start.js"
   },
   "scripts": {
     "start": "webpack serve -c ./webpack.dev.js",
