@@ -1,7 +1,7 @@
 {
   "name": "@imklau/react-app",
   "description": "Basic React boilerplate used with a single line command.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "index.js",
   "author": "Klau",
   "license": "WTFPL",
