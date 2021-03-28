@@ -1,20 +1,21 @@
 {
-  "name": "@imklau/react-boilerplate",
+  "name": "@imklau/react-app",
   "description": "Basic React Boilerplate",
   "version": "0.1.5",
   "main": "index.js",
   "author": "Klau",
   "license": "MIT",
-  "repository": "git@github.com:Noeemi/react-boilerplate.git",
+  "repository": "git@github.com:Noeemi/react-app.git",
   "keywords": [
     "react",
+    "react-app",
     "boilerplate",
     "react-boilerplate",
     "webpack",
     "emotion"
   ],
   "bin": {
-    "react-boilerplate": "bin/start.js"
+    "react-app": "bin/start.js"
   },
   "scripts": {
     "test": "echo \\\\'Error: no test specified\\\\' && exit 1"
@@ -25,9 +26,6 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "babel-loader": "^8.1.0",
     "eslint": "^7.12.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^7.2.0",
