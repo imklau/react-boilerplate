@@ -5,6 +5,7 @@ const fetch = require("node-fetch")
 const path = require("path")
 const { exec } = require("child_process")
 const editJsonFile = require("edit-json-file")
+const { redBright, whiteBright, greenBright } = require("chalk")
 
 const projectName = process.argv.slice(2)[0]
 
@@ -16,13 +17,28 @@ const getGitignore = async () => {
 }
 
 if (!projectName) {
-  console.log("⁉️ You need to specify your project name.")
+  console.log(
+    redBright(`
+  ⁉️  You need to specify your project name.`)
+  )
+  console.log(`
+  Try again with:`)
+  console.log(
+    whiteBright(`
+    react-app [name]
+      `)
+  )
 } else {
-  console.log("✨ Initializing project...")
+  console.log(`
+  ✨ Initializing project...`)
 
   exec(`mkdir ${projectName} && cd ${projectName}`, (initErr) => {
     if (initErr) {
-      console.error(`Everything was fine, then it wasn't:${initErr}`)
+      console.error(
+        redBright(`
+  Everything was fine, then it wasn't :(`),
+        `\n ${initErr}`
+      )
       return
     }
 
@@ -37,14 +53,29 @@ if (!projectName) {
       })
     })
 
-    console.log("Installing dependencies ------ it might take a few minutes...")
+    console.log(`
+    Installing dependencies - it might take a few minutes...`)
     exec(`cd ${projectName} && yarn`, (err) => {
       if (err) {
-        console.error(`Some error while installing dependencies ${err}`)
+        console.error(
+          redBright(`Some error while installing dependencies ${err}`)
+        )
         return
       }
+
       console.log(
-        `✅  All done!\n\nYour project is now ready\n\nUse the below command to run the app.\n\ncd ${projectName}\nyarn start`
+        greenBright(`
+    ✓ All done!`)
+      )
+
+      console.log(`
+  Your project is now ready.
+  Use the below commands to run the app.`)
+      console.log(
+        whiteBright(`
+    cd ${projectName}
+    yarn start
+      `)
       )
     })
   })
