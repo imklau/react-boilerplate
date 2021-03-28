@@ -6,7 +6,7 @@ Basic react boilerplate with webpack, babel, react-router and emotion.
 
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/) [![Netlify Status](https://api.netlify.com/api/v1/badges/69520b70-de4a-4925-940f-086b6294d128/deploy-status)](https://app.netlify.com/sites/imklau-react-app/deploys)
 
-<img src=https://imklau-react-app.netlify.app/344f7fa11a5680466361702630d912c1.jpg height="300px">
+<img src=https://imklau-react-app.netlify.app/344f7fa11a5680466361702630d912c1.jpg height="250px">
 
 ## Quick start
 
