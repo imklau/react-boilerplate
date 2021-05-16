@@ -3,7 +3,7 @@ const path = require("path")
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   devServer: {
     port: 9000,
     historyApiFallback: true,
@@ -22,10 +22,15 @@ module.exports = {
       "@views": path.resolve(__dirname, "./../src/views"),
       "@theme": path.resolve(__dirname, "./../src/theme"),
     },
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ["ts-loader"],
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
