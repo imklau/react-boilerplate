@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
 /* eslint-disable no-console */
-const { writeFile, copy } = require("fs-extra")
-const fetch = require("node-fetch")
-const path = require("path")
 const { exec, execSync } = require("child_process")
 const editJsonFile = require("edit-json-file")
 const { redBright, whiteBright, greenBright } = require("chalk")
@@ -15,46 +12,6 @@ const GIT_REPO = "https://github.com/Noeemi/react-app/trunk/"
 
 program.option("-ts, --typescript", "a boilerplate with TypeScript settings")
 
-function runApp(projectName) {
-  console.log(`
-    ✨ Initializing project...`)
-
-  execSync(`svn export ${GIT_REPO}/app ${projectName}`)
-
-  console.log(`
-      Installing dependencies - it might take a few minutes...`)
-
-  exec(`cd ${projectName} && yarn`, (err) => {
-    if (err) {
-      console.error(
-        redBright(`Some error while installing dependencies ${err}`)
-      )
-      return
-    }
-
-    const packageJson = editJsonFile(`${projectName}/package.json`)
-
-    packageJson.set("name", projectName)
-    packageJson.save()
-
-    console.log(
-      greenBright(`
-      ✓ All done!`)
-    )
-
-    console.log(`
-      Your project is now ready.
-      Use the below commands to run the app.`)
-
-    console.log(
-      whiteBright(`
-      cd ${projectName}
-      yarn start
-        `)
-    )
-  })
-}
-
 program
   .arguments("<project-name>")
   .description("", {
@@ -63,13 +20,47 @@ program
   .action((projectName) => {
     const options = program.opts()
 
-    if (options.typescript) {
-      // exec(`svn export ${GIT_REPO}/packages/react-app-ts`)
-      runApp(projectName)
-    } else {
-      // exec(`svn export ${GIT_REPO}/packages/react-app`)
-      runApp(projectName)
-    }
+    console.log(`
+    ✨ Initializing project...`)
+
+    execSync(
+      `svn export ${GIT_REPO}/packages/react-app${
+        options.typescript ? "-ts" : ""
+      } ${projectName}`
+    )
+
+    console.log(`
+      Installing dependencies - it might take a few minutes...`)
+
+    exec(`cd ${projectName} && yarn`, (err) => {
+      if (err) {
+        console.error(
+          redBright(`Some error while installing dependencies ${err}`)
+        )
+        return
+      }
+
+      const packageJson = editJsonFile(`${projectName}/package.json`)
+
+      packageJson.set("name", projectName)
+      packageJson.save()
+
+      console.log(
+        greenBright(`
+      ✓ All done!`)
+      )
+
+      console.log(`
+      Your project is now ready.
+      Use the below commands to run the app.`)
+
+      console.log(
+        whiteBright(`
+      cd ${projectName}
+      yarn start
+        `)
+      )
+    })
   })
 
 program.parse()
