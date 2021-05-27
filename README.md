@@ -13,7 +13,13 @@ Basic react boilerplate with webpack, babel, react-router and emotion.
 Make sure you have node +12 & npm +7 installed and then run:
 
 ```
-npx @imklau/react-app app-name
+npx @imklau/react-app <app-name>
+```
+
+If you want to use React & TypeScript run it with `-ts` or `--typescript` flag:
+
+```
+npx @imklau/react-app <app-name> -ts
 ```
 
 ### Available commands:
