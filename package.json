@@ -14,14 +14,18 @@
     "webpack",
     "emotion"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "bin": {
-    "react-app": "bin/start.js"
+    "react-app": "bin/start"
   },
   "scripts": {
     "test": "echo \\\\'Error: no test specified\\\\' && exit 1"
   },
   "dependencies": {
     "chalk": "^4.1.0",
+    "commander": "^7.2.0",
     "edit-json-file": "^1.6.0",
     "fs-extra": "^9.1.0",
     "node-fetch": "^2.6.1"

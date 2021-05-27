@@ -1,0 +1,22 @@
+{
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "semi": [1, "never"],
+    "import/prefer-default-export": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": "webpack/webpack.dev.js"
+      }
+    }
+  }
+}
