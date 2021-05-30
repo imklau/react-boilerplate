@@ -8,6 +8,9 @@ module.exports = {
     port: 9000,
     historyApiFallback: true,
   },
+  output: {
+    publicPath: "/",
+  },
   stats: "minimal",
   plugins: [
     new HtmlWebpackPlugin({
