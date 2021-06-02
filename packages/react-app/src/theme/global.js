@@ -1,11 +1,11 @@
-import { css } from "@emotion/react"
+import { css } from '@emotion/react'
 
-import FiraSansRegular from "@assets/fonts/FiraSans-Regular.woff"
-import FiraSansRegular2 from "@assets/fonts/FiraSans-Regular.woff2"
-import FiraSansLight from "@assets/fonts/FiraSans-Light.woff"
-import FiraSansLight2 from "@assets/fonts/FiraSans-Light.woff2"
-import FiraSansMedium from "@assets/fonts/FiraSans-Medium.woff"
-import FiraSansMedium2 from "@assets/fonts/FiraSans-Medium.woff2"
+import FiraSansRegular from '@assets/fonts/FiraSans-Regular.woff'
+import FiraSansRegular2 from '@assets/fonts/FiraSans-Regular.woff2'
+import FiraSansLight from '@assets/fonts/FiraSans-Light.woff'
+import FiraSansLight2 from '@assets/fonts/FiraSans-Light.woff2'
+import FiraSansMedium from '@assets/fonts/FiraSans-Medium.woff'
+import FiraSansMedium2 from '@assets/fonts/FiraSans-Medium.woff2'
 
 const globalStyles = css`
   @font-face {

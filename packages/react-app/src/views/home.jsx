@@ -1,5 +1,5 @@
-import Button from "@components/button/"
-import image from "@assets/images/image.jpg"
+import Button from '@components/button/'
+import image from '@assets/images/image.jpg'
 
 const Home = () => (
   <>
