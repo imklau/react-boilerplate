@@ -10,8 +10,7 @@
     "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint ./ --ext=js,jsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
-    "lint:css": "stylelint src/**/*.js",
-    "format": "prettier --write . --ignore-path .gitignore"
+    "lint:css": "stylelint src/**/*.js"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
@@ -35,15 +34,12 @@
     "babel-loader": "^8.1.0",
     "eslint": "^7.12.1",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^7.2.0",
     "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
-    "prettier": "^2.2.1",
     "stylelint": "^13.9.0",
     "stylelint-config-standard": "^20.0.0",
     "ts-loader": "^9.1.2",
