@@ -10,8 +10,7 @@
     "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint ./ --ext=js,jsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
-    "lint:css": "stylelint src/**/*.js",
-    "format": "prettier --write . --ignore-path .gitignore"
+    "lint:css": "stylelint src/**/*.js"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
