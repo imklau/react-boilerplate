@@ -1,11 +1,16 @@
-import ReactDOM from "react-dom"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import { Global, ThemeProvider } from "@emotion/react"
+import ReactDOM from 'react-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom'
+import { Global, ThemeProvider } from '@emotion/react'
 
-import Home from "@views/home"
-import About from "@views/about"
+import Home from '@views/home'
+import About from '@views/about'
 
-import { theme, globalStyles } from "@theme"
+import { theme, globalStyles } from '@theme'
 
 const App = () => (
   <ThemeProvider theme={theme}>
@@ -29,4 +34,4 @@ const App = () => (
   </ThemeProvider>
 )
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById('root'))
