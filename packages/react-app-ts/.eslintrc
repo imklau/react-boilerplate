@@ -1,8 +1,17 @@
 {
-  "extends": ["airbnb", "airbnb/hooks"],
-  "env": {
-    "browser": true
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     "semi": [1, "never"],
     "import/prefer-default-export": "off",
@@ -10,11 +19,32 @@
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
     "import/resolver": {
       "node": {},
       "webpack": {
         "config": "webpack/webpack.dev.js"
       }
     }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    },
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+          "react/prop-types": "off"
+      }
   }
+  ]
 }
