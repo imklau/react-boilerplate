@@ -24,7 +24,7 @@ program
     ✨ Initializing project...`)
 
     execSync(
-      `svn export ${GIT_REPO}/packages/react-app${
+      `svn export ${GIT_REPO}/packages/react${
         options.typescript ? "-ts" : ""
       } ${projectName}`
     )
