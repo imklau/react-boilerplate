@@ -60,7 +60,7 @@ program
 
       console.log(`
       Your project is now ready.
-      Use the below commands to run the app.`)
+      Use the commands below to run the app.`)
 
       console.log(
         whiteBright(`
