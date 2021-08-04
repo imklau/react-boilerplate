@@ -1,3 +1,5 @@
+import { element } from 'prop-types'
+
 import ArrowNext from '@assets/icons/arrow-next.svg'
 import * as Styled from './button.styled'
 
@@ -7,3 +9,7 @@ export const Button = ({ children }) => (
     <ArrowNext width={10} fill="#fff" />
   </Styled.Button>
 )
+
+Button.propTypes = {
+  children: element.isRequired,
+}
