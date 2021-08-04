@@ -9,7 +9,7 @@
     "build": "webpack -c ./webpack/webpack.prod.js",
     "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js",
-    "lint:js": "eslint ./ --ext=js,jsx,ts,tsx --no-error-on-unmatched-pattern"
+    "lint:js": "eslint ./ --ext=js,jsx,ts,tsx --ignore-path .gitignore --no-error-on-unmatched-pattern"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
