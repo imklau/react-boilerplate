@@ -18,7 +18,7 @@
     "react-app": "bin/start"
   },
   "scripts": {
-    "test": "echo \\\\'Error: no test specified\\\\' && exit 1"
+    "lint": "eslint ./bin/** --ignore-path .gitignore --no-error-on-unmatched-pattern"
   },
   "dependencies": {
     "chalk": "^4.1.0",
