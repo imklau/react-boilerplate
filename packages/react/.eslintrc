@@ -1,21 +1,32 @@
 {
   "root": true,
-  "extends": ["airbnb", "airbnb/hooks"],
   "env": {
-    "browser": true
+    "browser": true,
+    "es2021": true
   },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
   "rules": {
-    "semi": [1, "never"],
-    "import/prefer-default-export": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "comma-dangle": ["error", "always-multiline"]
   },
   "settings": {
-    "import/resolver": {
-      "node": {},
-      "webpack": {
-        "config": "webpack/webpack.dev.js"
-      }
+    "react": {
+      "pragma": "React",
+      "version": "detect"
     }
   }
 }
