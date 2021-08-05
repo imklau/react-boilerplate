@@ -21,12 +21,25 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"]
+      }
+    ]
   },
   "settings": {
     "react": {
       "pragma": "React",
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": "webpack/webpack.dev.js"
+      }
     }
   }
 }
