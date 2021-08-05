@@ -1,25 +1,38 @@
 {
   "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "standard"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint",
-    "react-hooks"
-  ],
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "react",
+    "@typescript-eslint"
   ],
   "rules": {
-    "semi": [1, "never"],
-    "import/prefer-default-export": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"]
+      }
+    ]
   },
-  "ignorePatterns": ["webpack/**"],
   "settings": {
     "react": {
       "pragma": "React",
@@ -39,14 +52,16 @@
       "parser": "@typescript-eslint/parser",
       "rules": {
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off"
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/consistent-type-imports": "error"
       }
     },
     {
       "files": ["**/*.tsx"],
       "rules": {
-          "react/prop-types": "off"
+        "react/prop-types": "off"
       }
-  }
-  ]
+    }
+  ],
+  "ignorePatterns": ["webpack"]
 }

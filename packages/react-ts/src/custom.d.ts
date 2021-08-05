@@ -1,23 +1,23 @@
-declare module "*.svg" {
+declare module '*.svg' {
   const content: any
   export default content
 }
 
-declare module "*.png" {
+declare module '*.png' {
   const content: any
   export default content
 }
 
-declare module "*.jpg" {
+declare module '*.jpg' {
   const content: any
   export default content
 }
 
-declare module "*.woff" {
+declare module '*.woff' {
   const src: string
   export default src
 }
-declare module "*.woff2" {
+declare module '*.woff2' {
   const src: string
   export default src
 }

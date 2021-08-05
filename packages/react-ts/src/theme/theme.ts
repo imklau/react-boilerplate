@@ -1,7 +1,7 @@
 const colors = {
-  primary: "hotpink",
-  dark: "#232323",
-  white: "#fff",
+  primary: 'hotpink',
+  dark: '#232323',
+  white: '#fff',
 }
 
 export interface Theme {
