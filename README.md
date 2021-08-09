@@ -1,6 +1,4 @@
-# React app
-
-Basic react boilerplate with webpack, babel, react-router and emotion.
+# React app boilerplate
 
 ✨ Create a React app with a single line command.
 
@@ -8,42 +6,28 @@ Basic react boilerplate with webpack, babel, react-router and emotion.
 
 <img src=https://imklau-react-app.netlify.app/344f7fa11a5680466361702630d912c1.jpg height="250px">
 
-## Quick start
+## 🚀 Quick start
 
-Make sure you have node +12 & npm +7 installed and then run:
+Make sure you have node +12 and npm +7 installed and then run:
 
 ```
 npx @imklau/react-app <app-name>
 ```
 
-If you want to use React & TypeScript run it with `-ts` or `--typescript` flag:
+If you want to use **React & TypeScript** template run it with the `-ts` flag:
 
 ```
 npx @imklau/react-app <app-name> -ts
 ```
 
-### Available commands:
+## 👩🏻‍💻 Available commands:
 
-```
-yarn start
-```
+- `yarn start` - runs the app in the development mode. (`localhost:9000` by default)
+- `yarn build` - builds the app for production, files are saved to the `public` folder
+- `yarn build:serve` - builds the app and starts a server which will serve your build files
+- `yarn lint` - runs eslint to check all your js/ts files in the `src` directory
+- `yarn format` - runs prettier to format all your js/ts files in the `src` directory
 
-Runs the app in the development mode.
-
-Open localhost:9000 to view it in the browser.
-
-```
-yarn build
-```
-
-Builds the app for production, files are saved to the `public` folder.
-
-```
-yarn build:serve
-```
-
-This command will build your app and start a server which will serve your build files.
-
-## License
+## 📃 License
 
 This project is available under the WTFPL license.
