@@ -18,10 +18,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "comma-dangle": ["error", "always-multiline"],
@@ -29,7 +26,15 @@
       "error",
       {
         "newlines-between": "always-and-inside-groups",
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"]
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ]
       }
     ]
   },

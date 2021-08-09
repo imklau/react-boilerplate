@@ -9,7 +9,8 @@
     "build": "webpack -c ./webpack/webpack.prod.js",
     "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js",
-    "lint:js": "eslint ./ --ext=js,jsx,ts,tsx --ignore-path .gitignore --no-error-on-unmatched-pattern"
+    "lint:js": "eslint ./src --ext=js,jsx,ts,tsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "format": "prettier --write ./src --ignore-path .gitignore"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
@@ -36,6 +37,7 @@
     "@typescript-eslint/parser": "^4.29.0",
     "babel-loader": "^8.1.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-webpack": "^0.13.1",
     "eslint-plugin-import": "^2.23.4",
@@ -44,6 +46,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
+    "prettier": "^2.3.2",
     "ts-loader": "^9.1.2",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"

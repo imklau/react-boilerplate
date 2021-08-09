@@ -7,6 +7,7 @@ import * as Styled from './button.styled'
 export const Button = ({ children }) => (
   <Styled.Button type="button" onClick={() => console.log('button click')}>
     {children}
+
     <ArrowNext width={10} fill="#fff" />
   </Styled.Button>
 )

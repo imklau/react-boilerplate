@@ -9,34 +9,34 @@ import FiraSansMedium2 from '@assets/fonts/FiraSans-Medium.woff2'
 
 const globalStyles = css`
   @font-face {
-    font-family: "Fira Sans";
-    src: url(${FiraSansRegular}) format("woff2"),
-      url(${FiraSansRegular2}) format("woff");
+    font-family: 'Fira Sans';
+    src: url(${FiraSansRegular}) format('woff2'),
+      url(${FiraSansRegular2}) format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Fira Sans";
-    src: url(${FiraSansLight}) format("woff2"),
-      url(${FiraSansLight2}) format("woff");
+    font-family: 'Fira Sans';
+    src: url(${FiraSansLight}) format('woff2'),
+      url(${FiraSansLight2}) format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Fira Sans";
-    src: url(${FiraSansMedium}) format("woff2"),
-      url(${FiraSansMedium2}) format("woff");
+    font-family: 'Fira Sans';
+    src: url(${FiraSansMedium}) format('woff2'),
+      url(${FiraSansMedium2}) format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
 
   body {
-    font-family: "Fira Sans", Helvetica, sans-serif;
+    font-family: 'Fira Sans', Helvetica, sans-serif;
     color: #232323;
   }
 `
