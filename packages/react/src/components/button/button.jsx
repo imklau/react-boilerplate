@@ -1,4 +1,4 @@
-import { element } from 'prop-types'
+import { string } from 'prop-types'
 
 import ArrowNext from '@assets/icons/arrow-next.svg'
 
@@ -12,5 +12,5 @@ export const Button = ({ children }) => (
 )
 
 Button.propTypes = {
-  children: element.isRequired,
+  children: string.isRequired,
 }
