@@ -1,6 +1,6 @@
 {
   "name": "@imklau/react-app",
-  "description": "Basic React boilerplate used with a single line command.",
+  "description": "Basic React (or React & TypeScript) boilerplate with webpack, react-router and emotion.",
   "version": "1.2.0",
   "main": "index.js",
   "author": "Klau",
