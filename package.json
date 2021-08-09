@@ -1,7 +1,7 @@
 {
   "name": "@imklau/react-app",
   "description": "Basic React (or React & TypeScript) boilerplate with webpack, react-router and emotion.",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "main": "index.js",
   "author": "Klau",
   "license": "WTFPL",
