@@ -1,6 +1,6 @@
 # React app boilerplate
 
-✨ Create a React app with a single line command.
+✨ Basic React (or React & TypeScript) boilerplate with webpack, react-router and emotion.
 
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/) [![Netlify Status](https://api.netlify.com/api/v1/badges/69520b70-de4a-4925-940f-086b6294d128/deploy-status)](https://app.netlify.com/sites/imklau-react-app/deploys)
 
