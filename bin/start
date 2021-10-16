@@ -13,14 +13,13 @@ const program = new Command()
 
 const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
 
-program.option('-ts, --typescript', 'a boilerplate with TypeScript settings')
-
 program
   .version(packageJson.version)
   .arguments('<project-name>')
   .description('', {
     'project-name': 'your project name',
   })
+  .option('-ts, --typescript', 'a boilerplate with TypeScript settings')
   .action((projectName) => {
     if (fs.existsSync(`./${projectName}`)) {
       console.log(`
@@ -76,5 +75,5 @@ program
       )
     })
   })
+  .parse()
 
-program.parse()
