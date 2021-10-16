@@ -7,6 +7,8 @@ const editJsonFile = require('edit-json-file')
 const { redBright, whiteBright, greenBright } = require('chalk')
 const { Command } = require('commander')
 
+const packageJson = require('../package.json')
+
 const program = new Command()
 
 const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
@@ -14,6 +16,7 @@ const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
 program.option('-ts, --typescript', 'a boilerplate with TypeScript settings')
 
 program
+  .version(packageJson.version)
   .arguments('<project-name>')
   .description('', {
     'project-name': 'your project name',
