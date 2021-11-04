@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Global, ThemeProvider } from '@emotion/react'
 
 import Home from '@views/home'
@@ -11,9 +11,6 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <Global styles={globalStyles} />
     <Router>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-
       <Switch>
         <Route exact path="/">
           <Home />
