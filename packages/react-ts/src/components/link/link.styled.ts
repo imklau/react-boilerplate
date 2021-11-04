@@ -8,7 +8,7 @@ export const Link = styled(RouterLink)`
   text-decoration: none;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
