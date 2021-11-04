@@ -3,6 +3,7 @@
 /* eslint-disable no-console */
 const fs = require('fs')
 const { exec, execSync } = require('child_process')
+
 const editJsonFile = require('edit-json-file')
 const { redBright, whiteBright, greenBright } = require('chalk')
 const { Command } = require('commander')
@@ -27,7 +28,9 @@ function checkProjectName(projectName) {
 
   if (fs.existsSync(`./${projectName}`)) {
     console.log(`
-  ❗️ The directory ${whiteBright(projectName)} exists. Try using a new project name.
+  ❗️ The directory ${whiteBright(
+    projectName
+  )} exists. Try using a new project name.
     `)
 
     process.exit(1)
@@ -46,52 +49,55 @@ program
   })
   .parse()
 
-  checkProjectName(projectName)
+checkProjectName(projectName)
 
-  const options = program.opts()
+const options = program.opts()
 
-  console.log(`
+console.log(`
   ✨ Initializing project...`)
 
-  // clone the whole repo
-  execSync(`git clone ${GIT_REPO} ${projectName} -q`)
+// clone the whole repo
+execSync(`git clone ${GIT_REPO} ${projectName} -q`)
 
-  // copy the template files
-  execSync(`cd ${projectName} && cp -r packages/react${options.typescript ? '-ts/' : '/'} .`)
+// copy the template files
+execSync(
+  `cd ${projectName} && cp -r packages/react${
+    options.typescript ? '-ts/' : '/'
+  } .`
+)
 
-  // remove unnecessary files
-  execSync(`cd ${projectName} && rm -r bin && rm -r packages && rm README.md && rm LICENSE.md`)
+// remove unnecessary files
+execSync(
+  `cd ${projectName} && rm -r bin && rm -r packages && rm README.md && rm LICENSE.md`
+)
 
-  console.log(`
+console.log(`
     Installing dependencies - it might take a few minutes...`)
 
-  exec(`cd ${projectName} && yarn`, (err) => {
-    if (err) {
-      console.error(
-        redBright(`Some error while installing dependencies ${err}`),
-      )
-      return
-    }
+exec(`cd ${projectName} && yarn`, (err) => {
+  if (err) {
+    console.error(redBright(`Some error while installing dependencies ${err}`))
+    return
+  }
 
-    const packageJson = editJsonFile(`${projectName}/package.json`)
+  const packageJson = editJsonFile(`${projectName}/package.json`)
 
-    packageJson.set('name', projectName)
-    packageJson.save()
+  packageJson.set('name', projectName)
+  packageJson.save()
 
-    console.log(
-      greenBright(`
-    ✓ All done!`),
-    )
+  console.log(
+    greenBright(`
+    ✓ All done!`)
+  )
 
-    console.log(`
+  console.log(`
     Your project is now ready.
     Use the commands below to run the app.`)
 
-    console.log(
-      whiteBright(`
+  console.log(
+    whiteBright(`
     cd ${projectName}
     yarn start
-      `),
-    )
-  })
-
+      `)
+  )
+})
