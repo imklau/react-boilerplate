@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 export const Link = styled(RouterLink)`
   position: relative;
   display: inline-block;
-  margin-right: 30px;
   padding: 5px 0;
   color: ${({ theme }) => theme.colors.light};
   text-decoration: none;
