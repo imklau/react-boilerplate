@@ -7,7 +7,7 @@ import * as Styled from './link.styled'
 export const Link = ({ to, children }) => (
   <Styled.Link to={to}>
     {children}
-    <ArrowNext width={10} fill="#fff" />
+    <ArrowNext width={10} />
   </Styled.Link>
 )
 
