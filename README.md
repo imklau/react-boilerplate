@@ -24,7 +24,6 @@ npx @imklau/react-app <app-name> -ts
 
 - `yarn start` - runs the app in the development mode. (`localhost:9000` by default)
 - `yarn build` - builds the app for production, files are saved to the `public` folder
-- `yarn build:serve` - builds the app and starts a server which will serve your build files
 - `yarn lint` - runs eslint to check all your js/ts files in the `src` directory
 - `yarn format` - runs prettier to format all your js/ts files in the `src` directory
 

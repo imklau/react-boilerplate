@@ -7,7 +7,6 @@
   "scripts": {
     "start": "webpack serve -c ./webpack/webpack.dev.js",
     "build": "webpack -c ./webpack/webpack.prod.js",
-    "build:serve": "yarn build && serve ./public",
     "lint": "yarn lint:js",
     "lint:js": "eslint ./src --ext=js,jsx,ts,tsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "format": "prettier --write ./src --ignore-path .gitignore"
