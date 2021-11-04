@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Global, ThemeProvider } from '@emotion/react'
 
 import Home from '@views/home'
@@ -11,17 +11,11 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <Global styles={globalStyles} />
     <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="*">
-          <h1>404: Not Found</h1>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<h1>404: Not Found</h1>} />
+      </Routes>
     </Router>
   </ThemeProvider>
 )
