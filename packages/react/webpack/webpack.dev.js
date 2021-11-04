@@ -14,7 +14,6 @@ module.exports = {
   stats: 'minimal',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React Boilerplate',
       template: './src/index.html',
     }),
     new webpack.DefinePlugin({

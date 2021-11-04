@@ -14,7 +14,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'React Boilerplate',
       template: './src/index.html',
     }),
   ],
