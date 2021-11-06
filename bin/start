@@ -19,7 +19,7 @@ let projectName
 function checkProjectName(projectName) {
   if (typeof projectName === 'undefined') {
     console.log(`
-  ❗️ Please specify the project name.
+  ❗️ Please specify the app name.
 
     ${whiteBright('npx @imklau/react-app <app-name>')}
     `)
@@ -31,7 +31,7 @@ function checkProjectName(projectName) {
     console.log(`
   ❗️ The directory ${whiteBright(
     projectName
-  )} exists. Try using a new project name.
+  )} exists. Try using a new app name.
     `)
 
     process.exit(1)
@@ -51,12 +51,11 @@ function checkNodeVersion() {
 }
 
 program
+  .name(packageJson.name)
+  .usage('<app-name> [options]')
   .version(packageJson.version)
-  .arguments('[project-name]')
-  .description('', {
-    'project-name': 'your project name',
-  })
-  .option('-ts, --typescript', 'a boilerplate with TypeScript settings')
+  .arguments('[app-name]', 'your project name')
+  .option('-ts, --typescript', 'create boilerplate with TypeScript config')
   .action((name) => {
     projectName = name
   })
@@ -69,7 +68,7 @@ checkNodeVersion()
 const options = program.opts()
 
 console.log(`
-  ✨ Initializing project...`)
+  ✨ Initializing app...`)
 
 // clone the whole repo
 execSync(`git clone ${GIT_REPO} ${projectName} -q`)
@@ -106,7 +105,7 @@ exec(`cd ${projectName} && yarn`, (err) => {
   )
 
   console.log(`
-    Your project is now ready.
+    Your app is now ready.
     Use the commands below to run the app.`)
 
   console.log(
