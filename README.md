@@ -8,7 +8,7 @@
 
 ## 🚀 Quick start
 
-Make sure you have node +12 and npm +7 installed and then run:
+Make sure you have node +14 and npm +7 installed and then run:
 
 ```
 npx @imklau/react-app <app-name>

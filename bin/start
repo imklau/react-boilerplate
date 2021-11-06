@@ -12,6 +12,7 @@ const packageJson = require('../package.json')
 const program = new Command()
 
 const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
+const NODE_VERSION = process.versions.node
 
 let projectName
 
@@ -37,6 +38,18 @@ function checkProjectName(projectName) {
   }
 }
 
+function checkNodeVersion() {
+  if (parseInt(NODE_VERSION) < 14) {
+    console.log(`
+  You have Node ${whiteBright(NODE_VERSION)} installed.
+  The ${whiteBright('react-app')} requires Node ${whiteBright(
+      '14.0'
+    )} or higher. Please, update your version of Node.
+    `)
+    process.exit()
+  }
+}
+
 program
   .version(packageJson.version)
   .arguments('[project-name]')
@@ -50,6 +63,8 @@ program
   .parse()
 
 checkProjectName(projectName)
+
+checkNodeVersion()
 
 const options = program.opts()
 
