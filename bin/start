@@ -82,7 +82,7 @@ execSync(
 
 // remove unnecessary files
 execSync(
-  `cd ${projectName} && rm -r bin && rm -r packages && rm -r .husky rm README.md && rm LICENSE.md`
+  `cd ${projectName} && rm -r bin && rm -r packages && rm -r .husky && rm README.md && rm LICENSE.md`
 )
 
 console.log(`
