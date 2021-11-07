@@ -1,4 +1,4 @@
-# template - react-ts
+# template: react-ts
 
 TypeScript template for `react-app`.
 

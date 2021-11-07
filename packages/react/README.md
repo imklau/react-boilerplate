@@ -1,4 +1,4 @@
-# template - react
+# template: react
 
 The default template for `react-app`.
 
