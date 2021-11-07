@@ -22,9 +22,20 @@
   "bin": {
     "react-app": "bin/start"
   },
+  "lint-staged": {
+    "./bin/**": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
   "scripts": {
     "lint": "eslint ./bin/** --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "format": "prettier --write ./bin/** --ignore-path .gitignore"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -33,6 +44,8 @@
   },
   "devDependencies": {
     "eslint": "^8.1.0",
-    "eslint-plugin-import": "^2.23.4"
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6"
   }
 }
