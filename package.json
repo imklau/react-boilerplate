@@ -1,18 +1,23 @@
 {
   "name": "@imklau/react-app",
-  "description": "Basic React (or React & TypeScript) boilerplate with webpack, react-router and emotion.",
+  "description": "Highly customizable React boilerplate built with webpack.",
   "version": "2.0.0",
   "main": "index.js",
-  "author": "Klau",
+  "author": "Klaudia Zawodnik <noeemi@zoho.com>",
   "license": "WTFPL",
   "repository": "git@github.com:Noeemi/react-app.git",
+  "bugs": {
+    "url": "https://github.com/Noeemi/react-app/issues"
+  },
   "keywords": [
     "react",
     "react-app",
     "boilerplate",
     "react-boilerplate",
-    "webpack",
-    "emotion"
+    "typescript",
+    "react-typescript",
+    "emotion",
+    "webpack"
   ],
   "bin": {
     "react-app": "bin/start"
