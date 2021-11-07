@@ -68,7 +68,7 @@ checkNodeVersion()
 const options = program.opts()
 
 console.log(`
-  ✨ Initializing app...`)
+    🦾 Initializing app...`)
 
 // clone the whole repo
 execSync(`git clone ${GIT_REPO} ${projectName} -q`)
