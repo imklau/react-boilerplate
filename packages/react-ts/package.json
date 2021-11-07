@@ -5,8 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve -c ./webpack/webpack.dev.js",
-    "build": "webpack -c ./webpack/webpack.prod.js",
+    "start": "webpack serve -c ./build/webpack.dev.js",
+    "build": "webpack -c ./build/webpack.prod.js",
     "lint": "yarn lint:js",
     "lint:js": "eslint ./src --ext=js,jsx,ts,tsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "format": "prettier --write ./src --ignore-path .gitignore"

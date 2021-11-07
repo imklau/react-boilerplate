@@ -21,7 +21,7 @@ TypeScript template for `react-app`.
 ## 🌳 Folder structure
 
 ```
-├── webpack
+├── build
 ├── src
 │   ├── assets
 │   ├── components
