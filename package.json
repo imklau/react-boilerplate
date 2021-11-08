@@ -43,7 +43,7 @@
     "edit-json-file": "^1.6.0"
   },
   "devDependencies": {
-    "eslint": "^8.1.0",
+    "eslint": "^8.2.0",
     "eslint-plugin-import": "^2.23.4",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6"
