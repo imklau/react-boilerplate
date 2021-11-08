@@ -3,72 +3,115 @@
 /* eslint-disable no-console */
 const fs = require('fs')
 const { exec, execSync } = require('child_process')
+
 const editJsonFile = require('edit-json-file')
 const { redBright, whiteBright, greenBright } = require('chalk')
 const { Command } = require('commander')
+const packageJson = require('../package.json')
 
 const program = new Command()
 
-const GIT_REPO = 'https://github.com/Noeemi/react-app/trunk/'
+const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
+const NODE_VERSION = process.versions.node
 
-program.option('-ts, --typescript', 'a boilerplate with TypeScript settings')
+let projectName
+
+function checkProjectName(projectName) {
+  if (typeof projectName === 'undefined') {
+    console.log(`
+  ❗️ Please specify the app name.
+
+    ${whiteBright('npx @imklau/react-app <app-name>')}
+    `)
+
+    process.exit(1)
+  }
+
+  if (fs.existsSync(`./${projectName}`)) {
+    console.log(`
+  ❗️ The directory ${whiteBright(
+    projectName
+  )} exists. Try using a new app name.
+    `)
+
+    process.exit(1)
+  }
+}
+
+function checkNodeVersion() {
+  if (parseInt(NODE_VERSION) < 14) {
+    console.log(`
+  You have Node ${whiteBright(NODE_VERSION)} installed.
+  The ${whiteBright('react-app')} requires Node ${whiteBright(
+      '14.0'
+    )} or higher. Please, update your version of Node.
+    `)
+    process.exit()
+  }
+}
 
 program
-  .arguments('<project-name>')
-  .description('', {
-    'project-name': 'your project name',
+  .name(packageJson.name)
+  .usage('<app-name> [options]')
+  .version(packageJson.version)
+  .arguments('[app-name]', 'your project name')
+  .option('-ts, --typescript', 'create boilerplate with TypeScript config')
+  .action((name) => {
+    projectName = name
   })
-  .action((projectName) => {
-    if (fs.existsSync(`./${projectName}`)) {
-      console.log(`
-    ❗️ The directory ${whiteBright(projectName)} exists. Try using a new project name.
+  .parse()
+
+checkProjectName(projectName)
+
+checkNodeVersion()
+
+const options = program.opts()
+
+console.log(`
+    🦾 Initializing app...`)
+
+// clone the whole repo
+execSync(`git clone ${GIT_REPO} ${projectName} -q`)
+
+// copy the template files
+execSync(
+  `cd ${projectName} && cp -r packages/react${
+    options.typescript ? '-ts/' : '/'
+  } .`
+)
+
+// remove unnecessary files
+execSync(
+  `cd ${projectName} && rm -r bin && rm -r packages && rm -r .husky && rm README.md && rm LICENSE.md`
+)
+
+console.log(`
+    Installing dependencies - it might take a few minutes...`)
+
+exec(`cd ${projectName} && yarn`, (err) => {
+  if (err) {
+    console.error(redBright(`Some error while installing dependencies ${err}`))
+    return
+  }
+
+  const packageJson = editJsonFile(`${projectName}/package.json`)
+
+  packageJson.set('name', projectName)
+  packageJson.save()
+
+  console.log(
+    greenBright(`
+    ✓ All done!`)
+  )
+
+  console.log(`
+    Your app is now ready.
+    Use the commands below to run the app.`)
+
+  console.log(
+    whiteBright(`
+    cd ${projectName}
+    yarn start
       `)
-      return
-    }
-
-    const options = program.opts()
-
-    console.log(`
-    ✨ Initializing project...`)
-
-    execSync(
-      `svn export ${GIT_REPO}/packages/react${
-        options.typescript ? '-ts' : ''
-      } ${projectName}`,
-    )
-
-    console.log(`
-      Installing dependencies - it might take a few minutes...`)
-
-    exec(`cd ${projectName} && yarn`, (err) => {
-      if (err) {
-        console.error(
-          redBright(`Some error while installing dependencies ${err}`),
-        )
-        return
-      }
-
-      const packageJson = editJsonFile(`${projectName}/package.json`)
-
-      packageJson.set('name', projectName)
-      packageJson.save()
-
-      console.log(
-        greenBright(`
-      ✓ All done!`),
-      )
-
-      console.log(`
-      Your project is now ready.
-      Use the commands below to run the app.`)
-
-      console.log(
-        whiteBright(`
-      cd ${projectName}
-      yarn start
-        `),
-      )
-    })
-  })
-
-program.parse()
+  )
+})

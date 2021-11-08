@@ -1,20 +1,11 @@
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
-  entry: './src/index.jsx',
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, './../public'),
-  },
-  devtool: 'source-map',
+  entry: './src/index.tsx',
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'React Boilerplate',
       template: './src/index.html',
     }),
   ],
@@ -25,10 +16,15 @@ module.exports = {
       '@views': path.resolve(__dirname, './../src/views'),
       '@theme': path.resolve(__dirname, './../src/theme'),
     },
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ['ts-loader'],
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

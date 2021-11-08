@@ -1,24 +1,12 @@
 const path = require('path')
 
-const webpack = require('webpack')
-const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.jsx',
-  devServer: {
-    port: 9000,
-    historyApiFallback: true,
-  },
-  stats: 'minimal',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React Boilerplate',
       template: './src/index.html',
-    }),
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.config().parsed),
     }),
   ],
   resolve: {

@@ -37,7 +37,12 @@ const globalStyles = css`
 
   body {
     font-family: 'Fira Sans', Helvetica, sans-serif;
-    color: #232323;
+    color: #ffffff;
+    background-color: #18181c;
+  }
+
+  svg {
+    fill: currentColor;
   }
 `
 

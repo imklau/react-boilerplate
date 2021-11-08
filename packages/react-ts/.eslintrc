@@ -46,7 +46,7 @@
     "import/resolver": {
       "node": {},
       "webpack": {
-        "config": "webpack/webpack.dev.js"
+        "config": "build/webpack.dev.js"
       }
     }
   },
@@ -68,5 +68,5 @@
       }
     }
   ],
-  "ignorePatterns": ["webpack"]
+  "ignorePatterns": ["public", "build"]
 }

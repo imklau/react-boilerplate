@@ -5,9 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve -c ./webpack/webpack.dev.js",
-    "build": "webpack -c ./webpack/webpack.prod.js",
-    "build:serve": "yarn build && serve ./public",
+    "start": "webpack serve -c ./build/webpack.dev.js",
+    "build": "webpack -c ./build/webpack.prod.js",
     "lint": "yarn lint:js",
     "lint:js": "eslint ./src --ext=js,jsx --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "format": "prettier --write ./src --ignore-path .gitignore"
@@ -15,13 +14,13 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
-    "clean-webpack-plugin": "^3.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.0.0-alpha.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.0.0",
     "webpack": "^5.3.0"
   },
   "devDependencies": {
@@ -30,7 +29,7 @@
     "@babel/preset-react": "^7.12.1",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.1.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-webpack": "^0.13.1",
@@ -40,8 +39,9 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
-    "prettier": "2.3.2",
-    "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^3.11.0"
+    "prettier": "2.4.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0",
+    "webpack-merge": "^5.8.0"
   }
 }

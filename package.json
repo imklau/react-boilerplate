@@ -1,32 +1,51 @@
 {
   "name": "@imklau/react-app",
-  "description": "Basic React (or React & TypeScript) boilerplate with webpack, react-router and emotion.",
+  "description": "Highly customizable React boilerplate built with webpack.",
   "version": "2.0.0",
   "main": "index.js",
-  "author": "Klau",
+  "author": "Klaudia Zawodnik <noeemi@zoho.com>",
   "license": "WTFPL",
   "repository": "git@github.com:Noeemi/react-app.git",
+  "bugs": {
+    "url": "https://github.com/Noeemi/react-app/issues"
+  },
   "keywords": [
     "react",
     "react-app",
     "boilerplate",
     "react-boilerplate",
-    "webpack",
-    "emotion"
+    "typescript",
+    "react-typescript",
+    "emotion",
+    "webpack"
   ],
   "bin": {
     "react-app": "bin/start"
   },
+  "lint-staged": {
+    "./bin/**": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
   "scripts": {
-    "lint": "eslint ./bin/** --ignore-path .gitignore --no-error-on-unmatched-pattern"
+    "lint": "eslint ./bin/** --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "format": "prettier --write ./bin/** --ignore-path .gitignore"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^7.2.0",
+    "commander": "^8.3.0",
     "edit-json-file": "^1.6.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.23.4"
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6"
   }
 }
