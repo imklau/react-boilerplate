@@ -19,9 +19,7 @@
     "emotion",
     "webpack"
   ],
-  "bin": {
-    "react-app": "bin/start"
-  },
+  "bin": "build/start",
   "lint-staged": {
     "./bin/**": [
       "yarn lint",
