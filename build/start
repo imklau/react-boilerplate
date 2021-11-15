@@ -1,61 +1,20 @@
 #!/usr/bin/env node
 
-/* eslint-disable no-console */
-const fs = require('fs')
 const { exec, execSync } = require('child_process')
-
-const editJsonFile = require('edit-json-file')
 const { redBright, whiteBright, greenBright } = require('chalk')
 const { Command } = require('commander')
 const packageJson = require('../package.json')
+const {
+  checkNodeVersion,
+  checkProjectName,
+  updatePackageJson,
+} = require('./utils')
 
 const program = new Command()
 
 const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
-const NODE_VERSION = process.versions.node
 
 let projectName
-
-function checkProjectName() {
-  if (typeof projectName === 'undefined') {
-    console.log(`
-  ❗️ Please specify the app name.
-
-    ${whiteBright('npx @imklau/react-app <app-name>')}
-    `)
-
-    process.exit(1)
-  }
-
-  if (fs.existsSync(`./${projectName}`)) {
-    console.log(`
-  ❗️ The directory ${whiteBright(
-    projectName
-  )} exists. Try using a new app name.
-    `)
-
-    process.exit(1)
-  }
-}
-
-function checkNodeVersion() {
-  if (parseInt(NODE_VERSION) < 14) {
-    console.log(`
-  You have Node ${whiteBright(NODE_VERSION)} installed.
-  The ${whiteBright('react-app')} requires Node ${whiteBright(
-      '14.0'
-    )} or higher. Please, update your version of Node.
-    `)
-    process.exit()
-  }
-}
-
-function updatePackageJson() {
-  const packageJson = editJsonFile(`${projectName}/package.json`)
-
-  packageJson.set('name', projectName)
-  packageJson.save()
-}
 
 program
   .name(packageJson.name)
@@ -72,8 +31,6 @@ checkProjectName(projectName)
 
 checkNodeVersion()
 
-const options = program.opts()
-
 console.log(`
     🦾 Initializing app...`)
 
@@ -83,11 +40,13 @@ execSync(`git clone ${GIT_REPO} ${projectName} -q`)
 // copy the template files
 execSync(
   `cd ${projectName} && cp -r packages/react${
-    options.typescript ? '-ts/' : '/'
+    program.opts().typescript ? '-ts/' : '/'
   } .`
 )
 
-// remove unnecessary files
+updatePackageJson(projectName)
+
+// remove unrelated files
 execSync(
   `cd ${projectName} && rm -r bin && rm -r packages && rm -r .husky && rm README.md && rm LICENSE.md`
 )
@@ -97,14 +56,11 @@ console.log(`
 
 exec(`cd ${projectName} && yarn`, (err) => {
   if (err) {
-    console.error(redBright(`Some error while installing dependencies ${err}`))
+    console.log(redBright(`Some error while installing dependencies ${err}`))
     return
   }
 
-  updatePackageJson()
-
-  console.log(
-    `${greenBright(`
+  console.log(`${greenBright(`
     ✓ All done!`)}
     
     Your app is now ready.
@@ -113,6 +69,5 @@ exec(`cd ${projectName} && yarn`, (err) => {
     ${whiteBright(`cd ${projectName}
     yarn start
       `)}
-    `
-  )
+    `)
 })
