@@ -16,7 +16,7 @@ const NODE_VERSION = process.versions.node
 
 let projectName
 
-function checkProjectName(projectName) {
+function checkProjectName() {
   if (typeof projectName === 'undefined') {
     console.log(`
   ❗️ Please specify the app name.
@@ -48,6 +48,13 @@ function checkNodeVersion() {
     `)
     process.exit()
   }
+}
+
+function updatePackageJson() {
+  const packageJson = editJsonFile(`${projectName}/package.json`)
+
+  packageJson.set('name', projectName)
+  packageJson.save()
 }
 
 program
@@ -94,24 +101,18 @@ exec(`cd ${projectName} && yarn`, (err) => {
     return
   }
 
-  const packageJson = editJsonFile(`${projectName}/package.json`)
-
-  packageJson.set('name', projectName)
-  packageJson.save()
+  updatePackageJson()
 
   console.log(
-    greenBright(`
-    ✓ All done!`)
-  )
-
-  console.log(`
+    `${greenBright(`
+    ✓ All done!`)}
+    
     Your app is now ready.
-    Use the commands below to run the app.`)
+    Use the commands below to run the app.
 
-  console.log(
-    whiteBright(`
-    cd ${projectName}
+    ${whiteBright(`cd ${projectName}
     yarn start
-      `)
+      `)}
+    `
   )
 })
