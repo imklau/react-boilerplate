@@ -27,8 +27,8 @@
     ]
   },
   "scripts": {
-    "lint": "eslint ./bin/** --ignore-path .gitignore --no-error-on-unmatched-pattern",
-    "format": "prettier --write ./bin/** --ignore-path .gitignore"
+    "lint": "eslint ./build/** --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "format": "prettier --write ./build/** --ignore-path .gitignore"
   },
   "husky": {
     "hooks": {
