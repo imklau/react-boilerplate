@@ -2,6 +2,14 @@
 
 The default template for `react-app`.
 
+## 🚀 Usage
+
+Run:
+
+```
+npx @imklau/react-app <app-name>
+```
+
 ## 👀 What's included?
 
 - [React](https://reactjs.org/) - what a surprise 😳

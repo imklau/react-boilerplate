@@ -2,6 +2,14 @@
 
 TypeScript template for `react-app`.
 
+## 🚀 Usage
+
+Run the command with the `-ts` flag:
+
+```
+npx @imklau/react-app <app-name> -ts
+```
+
 ## 👀 What's included?
 
 - [React](https://reactjs.org/) - what a surprise 😳
