@@ -1,5 +1,5 @@
 {
-  "name": "react-boilerplate",
+  "name": "@imklau/react-boilerplate",
   "description": "Highly customizable React boilerplate built with webpack.",
   "version": "3.1.0",
   "main": "index.js",

@@ -7,7 +7,7 @@ The default template for `react-boilerplate`.
 Run:
 
 ```
-npx react-boilerplate <app-name>
+npx @imklau/react-boilerplate <app-name>
 ```
 
 ## 👀 What's included?
