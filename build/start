@@ -12,7 +12,7 @@ const {
 
 const program = new Command()
 
-const GIT_REPO = 'git@github.com:Noeemi/react-app.git'
+const GIT_REPO = 'git@github.com:Noeemi/react-boilerplate.git'
 
 let projectName
 

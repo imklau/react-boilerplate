@@ -1,17 +1,16 @@
 {
-  "name": "@imklau/react-app",
+  "name": "react-boilerplate",
   "description": "Highly customizable React boilerplate built with webpack.",
   "version": "3.0.0",
   "main": "index.js",
   "author": "Klaudia Zawodnik <noeemi@zoho.com>",
   "license": "WTFPL",
-  "repository": "git@github.com:Noeemi/react-app.git",
+  "repository": "git@github.com:Noeemi/react-boilerplate.git",
   "bugs": {
-    "url": "https://github.com/Noeemi/react-app/issues"
+    "url": "https://github.com/Noeemi/react-boilerplate/issues"
   },
   "keywords": [
     "react",
-    "react-app",
     "boilerplate",
     "react-boilerplate",
     "typescript",

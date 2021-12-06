@@ -1,13 +1,13 @@
 # template: react
 
-The default template for `react-app`.
+The default template for `react-boilerplate`.
 
 ## 🚀 Usage
 
 Run:
 
 ```
-npx @imklau/react-app <app-name>
+npx react-boilerplate <app-name>
 ```
 
 ## 👀 What's included?

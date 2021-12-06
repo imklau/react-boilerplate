@@ -9,7 +9,7 @@ function checkNodeVersion() {
     console.log(`
     ❗️ You have Node ${whiteBright(NODE_VERSION)} installed.
 
-      The ${whiteBright('react-app')} requires Node ${whiteBright(
+      The ${whiteBright('react-boilerplate')} requires Node ${whiteBright(
       '14.0'
     )} or higher. Please, update your version of Node.
     `)
@@ -22,7 +22,7 @@ function checkProjectName(name) {
     console.log(`
     ❗️ Please specify the app name.
 
-      ${whiteBright('npx @imklau/react-app <app-name>')}
+      ${whiteBright('npx @imklau/react-boilerplate <app-name>')}
     `)
 
     process.exit(1)
