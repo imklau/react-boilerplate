@@ -11,13 +11,13 @@ Highly customizable React boilerplate built with webpack.
 Make sure you have node +14 and npm +7 installed, then run:
 
 ```
-npx @imklau/react-app <app-name>
+npx react-boilerplate <app-name>
 ```
 
 If you want to create a **React & TypeScript** app use the `-ts` flag:
 
 ```
-npx @imklau/react-app <app-name> -ts
+npx react-boilerplate <app-name> -ts
 ```
 
 ## 👩🏻‍💻 Available commands:

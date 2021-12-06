@@ -7,6 +7,8 @@ import FiraSansLight2 from '@assets/fonts/FiraSans-Light.woff2'
 import FiraSansMedium from '@assets/fonts/FiraSans-Medium.woff'
 import FiraSansMedium2 from '@assets/fonts/FiraSans-Medium.woff2'
 
+import theme from './theme'
+
 const globalStyles = css`
   @font-face {
     font-family: 'Fira Sans';
@@ -37,8 +39,8 @@ const globalStyles = css`
 
   body {
     font-family: 'Fira Sans', Helvetica, sans-serif;
-    color: #ffffff;
-    background-color: #18181c;
+    color: ${theme.colors.light};
+    background-color: ${theme.colors.dark};
   }
 
   svg {

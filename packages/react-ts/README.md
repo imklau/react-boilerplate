@@ -1,6 +1,14 @@
 # template: react-ts
 
-TypeScript template for `react-app`.
+TypeScript template for `react-boilerplate`.
+
+## 🚀 Usage
+
+Run the command with the `-ts` flag:
+
+```
+npx @imklau/react-boilerplate <app-name> -ts
+```
 
 ## 👀 What's included?
 

@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+const { exec, execSync } = require('child_process')
+const { redBright, whiteBright, greenBright } = require('chalk')
+const { Command } = require('commander')
+const packageJson = require('../package.json')
+const {
+  checkNodeVersion,
+  checkProjectName,
+  updatePackageJson,
+} = require('./utils')
+
+const program = new Command()
+
+const GIT_REPO = 'git@github.com:Noeemi/react-boilerplate.git'
+
+let projectName
+
+program
+  .name(packageJson.name)
+  .usage('<app-name> [options]')
+  .version(packageJson.version)
+  .arguments('[app-name]', 'your project name')
+  .option('-ts, --typescript', 'create boilerplate with TypeScript config')
+  .action((name) => {
+    projectName = name
+  })
+  .parse()
+
+checkProjectName(projectName)
+
+checkNodeVersion()
+
+console.log(`
+    🦾 Initializing app...`)
+
+// clone the whole repo
+execSync(`git clone ${GIT_REPO} ${projectName} -q`)
+
+// copy the template files
+execSync(
+  `cd ${projectName} && cp -r packages/react${
+    program.opts().typescript ? '-ts/' : '/'
+  } .`
+)
+
+updatePackageJson(projectName)
+
+// remove unrelated files
+execSync(
+  `cd ${projectName} && rm -r bin && rm -r packages && rm -r .husky && rm README.md && rm LICENSE.md`
+)
+
+console.log(`
+    Installing dependencies - it might take a few minutes...`)
+
+exec(`cd ${projectName} && yarn`, (err) => {
+  if (err) {
+    console.log(redBright(`Some error while installing dependencies ${err}`))
+    return
+  }
+
+  console.log(`${greenBright(`
+    ✓ All done!`)}
+    
+    Your app is now ready.
+    Use the commands below to run the app.
+
+    ${whiteBright(`cd ${projectName}
+    yarn start
+      `)}
+    `)
+})

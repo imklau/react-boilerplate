@@ -1,6 +1,14 @@
 # template: react
 
-The default template for `react-app`.
+The default template for `react-boilerplate`.
+
+## 🚀 Usage
+
+Run:
+
+```
+npx react-boilerplate <app-name>
+```
 
 ## 👀 What's included?
 

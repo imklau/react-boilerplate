@@ -2,23 +2,22 @@ import { Link as RouterLink } from 'react-router-dom'
 import styled from '@emotion/styled'
 
 export const Link = styled(RouterLink)`
-  position: relative;
-  padding: 5px 0;
-  color: ${({ theme }) => theme.colors.light};
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-radius: 2px;
+  text-transform: uppercase;
   text-decoration: none;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: ${({ theme }) => theme.colors.light};
-  }
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.primaryDark};
   }
 
   svg {
