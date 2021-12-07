@@ -1,7 +1,7 @@
 {
   "name": "@imklau/react-boilerplate",
   "description": "Highly customizable React boilerplate built with webpack.",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "main": "index.js",
   "author": "Klaudia Zawodnik <noeemi@zoho.com>",
   "license": "WTFPL",
