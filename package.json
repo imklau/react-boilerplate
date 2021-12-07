@@ -20,7 +20,7 @@
   ],
   "bin": "build/start",
   "lint-staged": {
-    "./bin/**": [
+    "./build/**": [
       "yarn lint",
       "yarn format"
     ]
