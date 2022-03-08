@@ -48,7 +48,7 @@ updatePackageJson(projectName)
 
 // remove unrelated files
 execSync(
-  `cd ${projectName} && rm build/start && rm build/utils.js && rm -r packages && rm -r .husky && rm README.md && rm LICENSE.md`
+  `cd ${projectName} && rm build/start && rm build/utils.js && rm -rf .git && rm -r packages && rm -r .husky && rm README.md && rm LICENSE.md`
 )
 
 console.log(`
