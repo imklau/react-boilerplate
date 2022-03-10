@@ -23,6 +23,7 @@
     "react/react-in-jsx-scope": "off",
     "comma-dangle": ["error", "always-multiline"],
     "multiline-ternary": ["error", "never"],
+    "space-before-function-paren": ["error", "never"],
     "import/order": [
       "error",
       {
